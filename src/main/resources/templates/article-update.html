@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>article update</title>
+</head>
+<body>
+<h1 th:text="${message}"></h1>
+
+<form action="/article-update/" method="PUT" th:object="${article}">
+    <table>
+        <tr>
+            <td>ID</td>
+            <td><input type="text" th:field="*{id}"></td>
+
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td><input type="text" th:field="*{title}"></td>
+
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td><input type="text" th:field="*{content}"></td>
+
+        </tr>
+        <tr>
+            <td>Create Date</td>
+            <td><input type="text" th:field="*{createdate}"></td>
+
+        </tr>
+        <tr>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
+
+</form>
+
+
+</body>
+</html>

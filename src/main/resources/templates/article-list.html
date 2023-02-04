@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Article List</title>
+</head>
+<body>
+<h1 th:text="${message}"></h1>
+<a href="/article-insert/page">Add New</a>
+<table>
+<tr>
+  <th>ID</th>
+  <th>Title</th>
+  <th>Content</th>
+  <th>CreateDate</th>
+</tr>
+<tr th:each="article:${article}">
+  <td th:text="${article.id}"></td>
+  <td th:text="${article.title}"></td>
+  <td th:text="${article.content}"></td>
+  <td th:text="${article.createdate}"></td>
+  <td>
+    <a th:href="@{/article/{id}(id=${article.id})}">View</a>
+    <a th:href="@{/article/{id}/delete(id=${article.id})}">Delete</a>
+    <a href="@{/article/{id}/update(id=${article.id}})}">update></a>
+  </td>
+</tr>
+</table>
+
+</body>
+</html>
